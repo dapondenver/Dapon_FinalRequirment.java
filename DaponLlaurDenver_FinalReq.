@@ -1,0 +1,33 @@
+import java.math.BigDecimal;
+
+public class PowerCalculator {
+
+    public static void main(String[] args) {
+        BigDecimal base = new BigDecimal("2.6"); // Initialize base number as BigDecimal
+        int exponent = 6; // Define exponent for power calculation
+
+        // Calculate power of base raised to the exponent
+        BigDecimal result = calculatePower(base, exponent);
+
+        // Output the result of the power calculation
+        System.out.println(base + " raised to the power of " + exponent + " is: " + result);
+    }
+
+    /**
+     * Calculates the power of a BigDecimal base raised to an integer exponent.
+     *
+     * @param base     The base number as a BigDecimal.
+     * @param exponent The exponent as an integer.
+     * @return The result of base raised to the power of exponent.
+     */
+    public static BigDecimal calculatePower(BigDecimal base, int exponent) {
+        BigDecimal result = BigDecimal.ONE; // Initialize result to 1
+
+        // Perform exponentiation by multiplying base 'exponent' times
+        for (int i = 0; i < exponent; i++) {
+            result = result.multiply(base); // Multiply result by base in each iteration
+        }
+
+        return result; // Return the final calculated power
+    }
+}
